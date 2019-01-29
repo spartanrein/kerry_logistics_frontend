@@ -1,12 +1,14 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
 import { Table } from 'semantic-ui-react'
+import ListHeader from '../components/ListHeader'
+import List from '../list/List';
 
 const tableData = [
-  { name: 'John', age: 15, gender: 'Male' },
-  { name: 'Amber', age: 40, gender: 'Female' },
-  { name: 'Leslie', age: 25, gender: 'Female' },
-  { name: 'Ben', age: 70, gender: 'Male' },
+  { Time: '09:10:20', Location: 'B0901301', ProductID: 'A1' },
+  { Time: '09:12:30', Location: 'A0501301', ProductID: 'A2' },
+  { Time: '09:15:25', Location: 'A0101101', ProductID: 'B1' },
+  { Time: '09:20:10', Location: 'B0101101', ProductID: 'B2' },
 ]
 
 export default class TableExampleSortable extends Component {
@@ -15,6 +17,13 @@ export default class TableExampleSortable extends Component {
     data: tableData,
     direction: null,
   }
+
+  handleReset = () => {
+    this.setState({
+      data: []
+    })
+  }
+
 
   handleSort = clickedColumn => () => {
     const { column, data, direction } = this.state
@@ -28,7 +37,6 @@ export default class TableExampleSortable extends Component {
 
       return
     }
-
     this.setState({
       data: data.reverse(),
       direction: direction === 'ascending' ? 'descending' : 'ascending',
@@ -39,39 +47,43 @@ export default class TableExampleSortable extends Component {
     const { column, data, direction } = this.state
 
     return (
-      <Table sortable celled fixed>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell
-              sorted={column === 'name' ? direction : null}
-              onClick={this.handleSort('name')}
-            >
-              Name
-            </Table.HeaderCell>
-            <Table.HeaderCell
-              sorted={column === 'age' ? direction : null}
-              onClick={this.handleSort('age')}
-            >
-              Age
-            </Table.HeaderCell>
-            <Table.HeaderCell
-              sorted={column === 'gender' ? direction : null}
-              onClick={this.handleSort('gender')}
-            >
-              Gender
-            </Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {_.map(data, ({ age, gender, name }) => (
-            <Table.Row key={name}>
-              <Table.Cell>{name}</Table.Cell>
-              <Table.Cell>{age}</Table.Cell>
-              <Table.Cell>{gender}</Table.Cell>
+      <div>
+        <button onClick = { this.handleReset }>Reset</button>
+
+        <Table sortable celled fixed>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell
+                sorted={column === 'Time' ? direction : null}
+                onClick={this.handleSort('Time')}
+              >
+                Time
+              </Table.HeaderCell>
+              <Table.HeaderCell
+                sorted={column === 'Location' ? direction : null}
+                onClick={this.handleSort('Location')}
+              >
+                Location
+              </Table.HeaderCell>
+              <Table.HeaderCell
+                sorted={column === 'ProductID' ? direction : null}
+                onClick={this.handleSort('ProductID')}
+              >
+                ProductID
+              </Table.HeaderCell>
             </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
+          </Table.Header>
+          <Table.Body>
+            {_.map(data, ({ Time, Location, ProductID }) => (
+              <Table.Row key={Time}>
+                <Table.Cell>{Time}</Table.Cell>
+                <Table.Cell>{Location}</Table.Cell>
+                <Table.Cell>{ProductID}</Table.Cell>
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table>
+      </div>
     )
   }
 }
