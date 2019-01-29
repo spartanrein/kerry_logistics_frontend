@@ -1,10 +1,10 @@
 import React from 'react';
 import Position from "./Position";
 
-const Level = ({maxPositions, posList}) => {
+const Level = ({bottomRow, maxPositions, posList}) => {
 
     const generatedPositions = posList.map((pos) => {
-        return <Position value={pos} />;
+        return <Position key={pos} bottomRow={bottomRow} value={pos} />;
     });
 
     return(

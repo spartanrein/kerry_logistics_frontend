@@ -7,21 +7,23 @@ class Bay extends React.Component {
             <div>
                 <BayGrid
                     maxPositions={"five"}
+                    maxPosInt={5}
                     levelList={[
                         ["BAY 1"],
-                        ["pos1", "pos2", "pos3", "pos4", "pos5"],
-                        ["pos1", "pos2", "pos3", "pos4", "pos5"],
-                        ["pos1", "pos2", "pos3", "pos4", "pos5"]
+                        ["safv", "sadf", "gsf", "asdf", "bdaf"],
+                        ["qwr", "gte", "qw4", "vfa", "qwef"],
+                        ["htdbs", "yru", "fE", "DYGJ", "asdsa"]
                     ]}
                 />
 
                 <BayGrid
                     maxPositions={"seven"}
+                    maxPosInt={7}
                     levelList={[
                         ["BAY 2"],
-                        ["pos1", "pos2", "pos3", "pos4", "pos5", "pos6", "pos7"],
-                        ["pos1", "pos2", "pos3", "pos4", "pos5", "pos6", "pos7"],
-                        ["pos1", "pos2", "pos3", "pos4", "pos5", "pos6", "pos7"]
+                        ["ilut", "yiu", "fmu", "ymfg", "fgh", "hts", "gfum"],
+                        ["jye", "wrth", "rmum", "wert", "hreth", "erht", ",lij"],
+                        ["vf", "werg", "ter", "yejr", "bgfs", "afe", "sbdt"]
                     ]}
                 />
             </div>
