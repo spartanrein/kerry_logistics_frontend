@@ -1,16 +1,15 @@
 import React from 'react';
 import Level from './Level';
 
-const BayGrid = ({levelList, children}) => {
+const BayGrid = ({maxPositions, levelList, children}) => {
 
     const generatedLevels = levelList.map((posList) => {
-        // return <Level><Position value={posValue.length} /></Level>;
-        return <Level posList={posList}>{children}</Level>;
+        return <Level maxPositions={maxPositions} posList={posList}>{children}</Level>;
     });
 
     return(
         <div className="bay-grid">
-            <div className="ui five column grid">
+            <div className={`ui ${maxPositions} column grid`}>
                 {generatedLevels}
             </div>
         </div>
