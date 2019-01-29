@@ -1,9 +1,15 @@
 import React from 'react';
+import Position from "./Position";
 
-const Level = ({children}) => {
+const Level = ({posList}) => {
+
+    const generatedPositions = posList.map((pos) => {
+        return <Position value={pos} />;
+    });
+
     return(
         <div className="level 5 column row">
-            {children}
+            {generatedPositions}
         </div>
     );
 };
