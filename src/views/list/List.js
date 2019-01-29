@@ -1,5 +1,6 @@
 import React from 'react';
 import ListHeader from "../components/ListHeader";
+import ListTable from "../components/ListTable";
 
 class List extends React.Component {
     render() {
@@ -7,6 +8,7 @@ class List extends React.Component {
         
         <div>
             <ListHeader/>
+            <ListTable/>
         </div>
         )
     }
