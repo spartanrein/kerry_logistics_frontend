@@ -23,6 +23,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "parcel": "^1.11.0",
     "sass": "^1.16.1"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",

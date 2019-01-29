@@ -1,8 +1,14 @@
 import React from 'react';
+import ListHeader from "../components/ListHeader";
 
 class List extends React.Component {
     render() {
-        return <div>ListView</div>
+        return ( 
+        
+        <div>
+            <ListHeader/>
+        </div>
+        )
     }
 }
 
