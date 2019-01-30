@@ -9,7 +9,6 @@ class List extends React.Component {
         
         <div>
             <ListHeader/>
-                clickReset = {this.props.resetList}
             <TableExampleSortable/>
                 
         </div>
