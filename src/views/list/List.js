@@ -6,11 +6,9 @@ import TableExampleSortable from "../components/SortableTable"
 class List extends React.Component {
     render() {
         return ( 
-        
         <div>
             <ListHeader/>
             <TableExampleSortable/>
-                
         </div>
         )
     }
