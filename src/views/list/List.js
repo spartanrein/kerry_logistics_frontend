@@ -1,13 +1,15 @@
 import React from 'react';
-import ListHeader from "../components/ListHeader";
-import TableExampleSortable from "../components/SortableTable"
+import ListHeader from '../components/ListHeader';
+import SortableTable from '../components/SortableTable';
+import CallApi from '../components/CallApi'
 
 class List extends React.Component {
     render() {
         return ( 
         <div>
             <ListHeader/>
-            <TableExampleSortable/>
+            <CallApi/>
+            <SortableTable/>
         </div>
         )
     }
